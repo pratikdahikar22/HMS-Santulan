@@ -59,6 +59,6 @@ Thumbs.db
 # MongoDB local data (optional)
 *.lock
 mongod.lock
-
+  
 
 .env
