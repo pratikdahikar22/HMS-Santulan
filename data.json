@@ -1,0 +1,805 @@
+
+//  page 1
+{
+  "registration_no": "",
+  "date_of_registration": "",
+  "patient_name": "",
+  "address": "",
+  "telephone_no": "",
+  "sex": "",
+  "age": "",
+  "date_of_birth": "",
+  "religion": "",
+  "community": "",
+  "educational_qualification": "",
+  "qualification_specify": "",
+  "occupation": "",
+  "income": "",
+  "marital_status": "",
+  "living_arrangements": {
+    "live_with_family": false,
+    "live_with_friends_or_distant_relatives": false,
+    "live_alone": false,
+    "on_the_street": false
+  },
+  "family_member_guardian": {
+    "name": "",
+    "address": "",
+    "telephone_no": ""
+  },
+  "referral_source": {
+    "self": false,
+    "family": false,
+    "social_worker": false,
+    "physician": false,
+    "recovered_addict": false,
+    "employer": false,
+    "media": false,
+    "through_awareness_program": false,
+    "any_other": false
+  },
+  "prior_treatment_for_addiction": "",
+  "prior_treatment_details": {
+    "year": "",
+    "place": "",
+    "sobriety_duration": ""
+  }
+}
+
+//page 2     
+
+{
+  "name": "John Doe",
+  "reg_no": "123456",
+  "age": "35",
+  "date_of_registration": "2025-05-09",
+  "drinking_drug_history": [
+    {
+      "drug_category": "Depressants",
+      "drugs": [
+        {
+          "name": "Alcohol",
+          "age_of_first_use": 18,
+          "years_of_use": 10,
+          "years_of_excessive_use": 5,
+          "specific_type": "Whiskey",
+          "route_of_administration": "Oral",
+          "frequency_last_30_days": "Daily",
+          "quantities_last_30_days": "750 ml/day"
+        },
+        {
+          "name": "Tranquilizers",
+          "age_of_first_use": 25,
+          "years_of_use": 3,
+          "years_of_excessive_use": 1,
+          "specific_type": "Diazepam",
+          "route_of_administration": "Oral",
+          "frequency_last_30_days": "Weekly",
+          "quantities_last_30_days": "10 mg"
+        }
+      ]
+    },
+    {
+      "drug_category": "Narcotic Analgesics",
+      "drugs": [
+        {
+          "name": "Codeine",
+          "age_of_first_use": 28,
+          "years_of_use": 2,
+          "years_of_excessive_use": 1,
+          "specific_type": "Cough Syrup",
+          "route_of_administration": "Oral",
+          "frequency_last_30_days": "Occasionally",
+          "quantities_last_30_days": "30 ml"
+        }
+      ]
+    },
+    {
+      "drug_category": "Cannabis",
+      "drugs": []
+    },
+    {
+      "drug_category": "Stimulants",
+      "drugs": []
+    },
+    {
+      "drug_category": "Hallucinogens",
+      "drugs": []
+    },
+    {
+      "drug_category": "Inhalants",
+      "drugs": []
+    },
+    {
+      "drug_category": "Substance not classified",
+      "drugs": [
+        {
+          "name": "Cough Syrup",
+          "age_of_first_use": 30,
+          "years_of_use": 1,
+          "years_of_excessive_use": 0,
+          "specific_type": "Dextromethorphan",
+          "route_of_administration": "Oral",
+          "frequency_last_30_days": "2 times",
+          "quantities_last_30_days": "20 ml"
+        }
+      ]
+    }
+  ]
+}
+
+//page 4
+
+{
+  "patient_info": {
+    "name": "",
+    "age": "",
+    "month": "",
+    "year": "",
+    "registration_no": "",
+    "diagnosis": ""
+  },
+  "bp_chart": [
+    {
+      "date": "",
+      "time": "",
+      "bp": "",
+      "pulse": "",
+      "medication": ""
+    }
+    // More entries can be added as required
+  ],
+  "temperature_chart": [
+    {
+      "date": "",
+      "hourly_readings": [
+        {
+          "hour": "7",
+          "temperature_f": "",
+          "bp": "",
+          "pulse": ""
+        },
+        {
+          "hour": "13",
+          "temperature_f": "",
+          "bp": "",
+          "pulse": ""
+        },
+        {
+          "hour": "19",
+          "temperature_f": "",
+          "bp": "",
+          "pulse": ""
+        }
+      ]
+    }
+    // More date entries can be added
+  ],
+  "weight_chart": [
+    {
+      "date": "",
+      "weight": ""
+    }
+    // More entries can be added
+  ]
+}
+
+{
+  "patient_id": "681d8270c62ce74ee7397e24",
+  "patient_info": {
+    "name": "John Doe",
+    "age": "35",
+    "month": "May",
+    "year": "2025",
+    "registration_no": "REG123456",
+    "diagnosis": "Hypertension"
+  },
+  "bp_chart": [
+    {
+      "date": "2025-05-10",
+      "time": "08:00 AM",
+      "bp": "130/85",
+      "pulse": "78",
+      "medication": "Amlodipine"
+    },
+    {
+      "date": "2025-05-11",
+      "time": "08:00 AM",
+      "bp": "128/82",
+      "pulse": "76",
+      "medication": "Amlodipine"
+    }
+  ],
+  "temperature_chart": [
+    {
+      "date": "2025-05-10",
+      "hourly_readings": [
+        {
+          "hour": "7",
+          "temperature_f": "98.6",
+          "bp": "130/85",
+          "pulse": "78"
+        },
+        {
+          "hour": "13",
+          "temperature_f": "99.0",
+          "bp": "132/86",
+          "pulse": "80"
+        },
+        {
+          "hour": "19",
+          "temperature_f": "98.4",
+          "bp": "128/84",
+          "pulse": "77"
+        }
+      ]
+    }
+  ],
+  "weight_chart": [
+    {
+      "date": "2025-05-10",
+      "weight": "70.5"
+    },
+    {
+      "date": "2025-05-11",
+      "weight": "70.3"
+    }
+  ]
+}
+  
+//page 5
+
+{
+  "project_in_charge": "Santulan, Pune",
+  "user_id": "",
+  "applicant": {
+    "name": "",
+    "age": "",
+    "residing_at": "",
+    "declaration_place": ""
+  },
+  "parent_guardian": {
+    "name": "",
+    "age": "",
+    "residing_at": ""
+  },
+  "confirmation": {
+    "executed_on_day": "",
+    "executed_on_month": "",
+    "executed_on_year": ""
+  },
+  "final_declaration": {
+    "place": "",
+    "day": "",
+    "month": "",
+    "year": ""
+  },
+  "signatures": {
+    "applicant_signature": "",
+    "applicant_signature_date": "",
+    "parent_guardian_1_signature": "",
+    "parent_guardian_1_date": "",
+    "parent_guardian_2_signature": "",
+    "parent_guardian_2_date": ""
+  }
+}
+
+
+//medical case sheet 2
+
+{
+  "physical_examination": {
+    "pulse_rate": "",
+    "urine_sugar": "",
+    "blood_pressure": "",
+    "weight": "",
+    "tremors": false,
+    "lymph": false,
+    "glossitis": false,
+    "flushed_face": false,
+    "excessive_sweating": false,
+    "palmar_erythema": false,
+    "pedal_edema": false,
+    "injection_mark": false,
+    "jaundice": false,
+    "loss_of_body_hair": false,
+    "wasting_of_muscles": false,
+    "abcess": false,
+    "malnutrition": false,
+    "clubbing_of_nails": false,
+    "spider_naevii": false,
+    "anemia": false,
+    "gynaecomstia": false
+  },
+  "system_examination_abnormalities": {
+    "respiratory_system": "",
+    "cardio_vascular_system": "",
+    "gastro_intestinal_system": "",
+    "nervous_system": ""
+  },
+  "medication_during_treatment": [
+    {
+      "date_month": "",
+      "complaints": "",
+      "medication": "",
+      "reason_for_change": "",
+      "signed_by_physician": ""
+    }
+  ],
+  "untoward_incident": {
+    "occurred": false,
+    "action_taken": ""
+  },
+  "referral_info": {
+    "referred": false,
+    "date_of_referral": "",
+    "need_of_referral": {
+      "medical": false,
+      "physical_problem": false
+    },
+    "institution_name": ""
+  },
+  "last_drink_or_drugs_taken": {
+    "days_ago": ""
+  },
+  "diagnosis": ""
+}
+
+// consent form
+
+{
+  "applicant": {
+    "name": "",
+    "on_behalf_of": "",
+    "relationship": ""  // e.g., Father, Mother, Husband, Wife
+  },
+  "patient": {
+    "name": "",
+    "reason_for_admission": ""
+  },
+  "payment": {
+    "monthly_general_fee_rs": "",
+    "personal_expenditure_rs": 1000,
+    "additional_charges": {
+      "psychiatric_consultation_rs": "",
+      "psychiatric_medicine": false,
+      "general_medicine": false,
+      "family_counseling_education": false,
+      "pathology_tests_xray": false,
+      "washing_ironing": false,
+      "special_diet": false,
+      "picnic_movie_lunch": false,
+      "special_attendant": false
+    }
+  },
+  "agreement": {
+    "compensation_liability": true,
+    "disease_history_shared": true,
+    "terms_understood": true,
+    "language_explained_in": "Marathi/Hindi"
+  },
+  "signatures": {
+    "applicant_signature": "",
+    "applicant_signature_date": "",
+    "guardian_signature_1": "",
+    "guardian_signature_1_date": "",
+    "guardian_signature_2": "",
+    "guardian_signature_2_date": ""
+  }
+}
+
+//page 12
+
+{
+  "sexual_history": {
+    "extra_marital_experience": "Present",  // or "Absent", "N/A"
+    "marital_status": "Unmarried",  // or "Married"
+    "age_of_partner": 28,
+    "sustained_relationship": true,
+    "years_known_each_other": 3,
+    "living_arrangement": "Living together",  // e.g., "Living together", "Separate", "Occasional"
+    "any_children": {
+      "has_children": true,
+      "details": "One child aged 3"
+    },
+    "high_risk_sexual_activities": true,
+    "commercial_sex_workers": {
+      "involved": true,
+      "condom_usage": "Always"  // or "Sometimes", "Never"
+    },
+    "casual_sexual_partners": {
+      "involved": true,
+      "condom_usage": "Sometimes"  // or "Always", "Never"
+    },
+    "hiv_test": {
+      "tested": true,
+      "result": "Negative",  // or "Positive", "Not willing to reveal", "Not collected reports", "Not applicable"
+    },
+    "current_sexual_problems": {
+      "has_problems": true,
+      "issues": [
+        "Reduced libido",
+        "Excessive sexual urge"
+      ],
+      "other": "Difficulty maintaining arousal"
+    }
+  }
+}
+
+
+//page 13
+
+{
+  "legal_history": {
+    "arrested_for_sale_of_drugs": {
+      "status": true,
+      "number_of_times": 2
+    },
+    "arrested_for_possession_of_drugs": {
+      "status": true,
+      "number_of_times": 1
+    },
+    "trouble_with_law": {
+      "status": true,
+      "issues": [
+        {
+          "type": "Arrested for drunken/drug influenced behaviour",
+          "number_of_times": 1
+        },
+        {
+          "type": "Fined for drunken driving",
+          "number_of_times": 2
+        },
+        {
+          "type": "Accident while driving under influence",
+          "number_of_times": 1
+        },
+        {
+          "type": "Assault",
+          "number_of_times": 0
+        },
+        {
+          "type": "Other",
+          "description": "Shoplifting",
+          "number_of_times": 1
+        }
+      ]
+    }
+  },
+  "leisure_time_activities": {
+    "playing_games": {
+      "before_addiction": true,
+      "in_last_year": false
+    },
+    "going_to_movies": {
+      "before_addiction": true,
+      "in_last_year": true
+    },
+    "watching_tv_or_music": {
+      "before_addiction": false,
+      "in_last_year": true
+    },
+    "reading": {
+      "before_addiction": true,
+      "in_last_year": true
+    },
+    "visiting_friends": {
+      "before_addiction": true,
+      "in_last_year": false
+    },
+    "other_hobbies": {
+      "before_addiction": "Painting",
+      "in_last_year": "None"
+    }
+  },
+  "religious_beliefs": {
+    "identity": "Believer",
+    "practices": {
+      "pray_at_home": "Always",
+      "visit_temple_regularly": "Sometimes",
+      "go_on_pilgrimages": "Never",
+      "celebrate_festivals": "Always"
+    }
+  }
+}
+
+
+//page 14
+
+{
+  "referral": {
+    "date": "2025-05-13",
+    "details_of_visits": "Patient visited for follow-up on withdrawal symptoms.",
+    "action_taken": "Referred to counseling and psychiatric evaluation.",
+    "referred_to": "Psychiatric Department",
+    "organisation_name": "XYZ Mental Health Center"
+  },
+  "treatment_plan": [
+    {
+      "goal": "Abstaining from alcohol and drugs",
+      "specific_activities": "Daily counseling, medication support",
+      "time_frame": "3 months"
+    },
+    {
+      "goal": "Getting back to a routine life",
+      "specific_activities": "Create daily schedule and follow through",
+      "time_frame": "4 weeks"
+    },
+    {
+      "goal": "Improvement in work life",
+      "specific_activities": "Job skill training",
+      "time_frame": "2 months"
+    },
+    {
+      "goal": "Managing finances",
+      "specific_activities": "Budgeting sessions, finance group support",
+      "time_frame": "6 weeks"
+    },
+    {
+      "goal": "Dealing with defects of character",
+      "specific_activities": "Therapy sessions for personality building",
+      "time_frame": "Ongoing"
+    },
+    {
+      "goal": "Improving relationship with family",
+      "specific_activities": "Family therapy",
+      "time_frame": "Monthly sessions"
+    },
+    {
+      "goal": "Involvement in healthy recreational activities",
+      "specific_activities": "Yoga, games, art classes",
+      "time_frame": "Weekly"
+    },
+    {
+      "goal": "Follow-up measures",
+      "specific_activities": "Monthly review with doctor",
+      "time_frame": "Ongoing"
+    },
+    {
+      "goal": "Dealing with relapses if any",
+      "specific_activities": "Emergency relapse plan and hotline",
+      "time_frame": "As needed"
+    }
+  ],
+  "drop_out": {
+    "date": "2025-06-20",
+    "reasons": [
+      "Lack of Motivation",
+      "Poverty, hence not able to stay"
+    ]
+  },
+  "extension_of_stay": {
+    "reasons": "Patient showed improvement but needs further support for relapse prevention and stable reintegration."
+  }
+}
+
+
+//page 15
+
+{
+  "discharge_slip": {
+    "name": "John Doe",
+    "registration_number": "123456",
+    "doa": "2025-04-01",  // Date of Admission
+    "dod": "2025-05-13",  // Date of Discharge
+    "departmental_clearance": [
+      {
+        "department": "House Keeping",
+        "dept_head": "Mr. Sharma",
+        "remarks": "Cleared",
+        "sign": "Signature_HK"
+      },
+      {
+        "department": "Medical",
+        "dept_head": "Dr. Rao",
+        "remarks": "Cleared",
+        "sign": "Signature_Med"
+      },
+      {
+        "department": "Library",
+        "dept_head": "Ms. Meena",
+        "remarks": "Returned books",
+        "sign": "Signature_Lib"
+      },
+      {
+        "department": "Stocks",
+        "dept_head": "Mr. Singh",
+        "remarks": "No pending items",
+        "sign": "Signature_Stocks"
+      },
+      {
+        "department": "Accounts",
+        "dept_head": "Mr. Kumar",
+        "remarks": "Settled",
+        "sign": "Signature_Accts"
+      }
+    ],
+    "counsellor_signature": "Signature_Counsellor",
+    "project_coordinator_signature": "Signature_PC",
+    "security": {
+      "signature": "Signature_Security",
+      "time_out": "15:30"
+    },
+    "final_acknowledgement": "I have received all my documents, reports, and belongings, I have no complaints regarding treatment I received.",
+    "final_signature": "Signature_Patient"
+  }
+}
+
+//high risk
+
+{
+  "high_risk_declaration": {
+    "applicant_signature": "",
+    "applicant_signature_date": "",
+    "parent_guardian_signature_1": "",
+    "parent_guardian_signature_1_date": "",
+    "parent_guardian_signature_2": "",
+    "parent_guardian_signature_2_date": ""
+  },
+  "family_history": {
+    "father": {
+      "name": "",
+      "age": null,
+      "occupation": "",
+      "income": null,
+      "death_reason": "",
+      "age_at_death": null
+    },
+    "mother": {
+      "name": "",
+      "age": null,
+      "occupation": "",
+      "income": null,
+      "death_reason": "",
+      "age_at_death": null
+    },
+    "siblings": [
+      {
+        "relationship": "",
+        "age": null,
+        "education": "",
+        "occupation": ""
+      }
+    ]
+  },
+  "childhood_and_adolescent_history": {
+    "experiences_before_age_15": {
+      "poverty_severe_debts": false,
+      "early_parental_loss": false,
+      "extra_marital_affairs": false,
+      "broken_home_or_single_parenting": false,
+      "violence": false,
+      "sexual_abuse_by_others": false,
+      "none": false,
+      "any_other": ""
+    },
+    "behavior_problems": [
+      {
+        "problem": "Running away from home",
+        "childhood_adolescence": false,
+        "present": false,
+        "absent": false
+      },
+      {
+        "problem": "Frequent physical fights and violence",
+        "childhood_adolescence": false,
+        "present": false,
+        "absent": false
+      },
+      {
+        "problem": "Destruction of others property",
+        "childhood_adolescence": false,
+        "present": false,
+        "absent": false
+      },
+      {
+        "problem": "Stealing",
+        "childhood_adolescence": false,
+        "present": false,
+        "absent": false
+      },
+      {
+        "problem": "Scholastic backwardness",
+        "childhood_adolescence": false,
+        "present": false,
+        "absent": false
+      },
+      {
+        "problem": "Experimenting with drugs/alcohol",
+        "childhood_adolescence": false,
+        "present": false,
+        "absent": false
+      },
+      {
+        "problem": "Gambling",
+        "childhood_adolescence": false,
+        "present": false,
+        "absent": false
+      },
+      {
+        "problem": "Any other",
+        "childhood_adolescence": false,
+        "present": false,
+        "absent": false
+      }
+    ]
+  },
+
+
+  "educational_history": {
+    "years_of_education": null,
+    "achievements_in_past": false,
+    "good_academic_records": false,
+    "high_achiever_extracurricular": false
+  },
+  "marital_history": {
+    "spouse": {
+      "name": "",
+      "age": null,
+      "religion_community": "",
+      "education": "",
+      "occupation": "",
+      "income_per_month": null,
+      "addiction_history_details": "",
+      "significant_events_and_attitudes": ""
+    },
+    "marriage_type": {
+      "arranged": false,
+      "choice": false
+    },
+    "accepted_by_family": false,
+    "previous_or_subsequent_marriages": false,
+    "separated_due_to_addiction": false,
+    "longest_separation_period": ""
+  },
+  "family_violence_history": {
+    "suspicious_of_wife": false,
+    "under_influence_of_alcohol_or_drugs": false,
+    "any_instance_of_family_violence": false,
+    "violence_details": {
+      "physical_violence": false,
+      "verbal_abuse": false,
+      "violent_incidents_outside": false,
+      "breaking_articles_at_home": false
+    }
+  },
+  "children_details": {
+    "number_of_children": {
+      "male": 0,
+      "female": 0
+    }
+  },
+
+
+
+
+  
+  "health_status_of_family": {
+    "problems": [
+      {
+        "problem": "",
+        "parents_and_siblings": {
+          "yes": false,
+          "relation": "",
+          "no": false,
+          "dont_know": false
+        },
+        "wife_children": {
+          "yes": false,
+          "relation": "",
+          "no": false,
+          "dont_know": false
+        }
+      }
+    ]
+  },
+  "adjustment_patterns": {
+    "relationship_with_family_members": {
+      "parents": "",
+      "siblings": "",
+      "spouse": "",
+      "children": ""
+    }
+  },
+  "family_damage_seen_by_counsellor": ""
+}
