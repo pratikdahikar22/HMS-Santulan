@@ -9,7 +9,7 @@ env/
 ENV/
 .venv/
 .pyenv/
-.env
+# .env
 
 # Distribution / packaging
 build/
@@ -61,4 +61,4 @@ Thumbs.db
 mongod.lock
   
 
-.env
+# .env
