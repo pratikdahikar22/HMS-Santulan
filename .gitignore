@@ -61,4 +61,4 @@ Thumbs.db
 mongod.lock
   
 
-# .env
+.env
