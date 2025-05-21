@@ -10,6 +10,7 @@ class User(BaseModel):
     email: EmailStr
 
 class GetUser(BaseModel):
+    id: str
     firstName: str
     lastName: str
     username: str
@@ -20,3 +21,7 @@ class GetUser(BaseModel):
 class Login(BaseModel):
     username: str
     password: str
+    
+class FogotPassword(BaseModel):
+    userId: str
+    newPassword: str

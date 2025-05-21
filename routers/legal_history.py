@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from models.legal_history import LegalHistory
+from models.legal_history import PatientLegalHistory
 from typing import Optional, List
 from bson import ObjectId     # type: ignore
 from bson.errors import InvalidId # type: ignore
@@ -13,7 +13,7 @@ router = APIRouter()
 #-------------- Legal History API (page-13) -----------
 
 @router.post("/legal-histroy/")
-async def create_legal_histroy(data: LegalHistory):
+async def create_legal_histroy(data: PatientLegalHistory):
     inserted_obj = legal_histroy_collection.insert_one(data.dict())
     
     return {
@@ -38,7 +38,7 @@ async def get_legal_histroy_by_patient_id(patient_id: str):
         raise HTTPException(status_code=400, detail="Invalid Legal History ID format")
 
 @router.put("/legal-histroy/{id}")
-async def update_legal_histroy_by_id(id: str, updated_data:LegalHistory):
+async def update_legal_histroy_by_id(id: str, updated_data:PatientLegalHistory):
     try:
         obj_id = ObjectId(id)
     except InvalidId:
@@ -53,5 +53,6 @@ async def update_legal_histroy_by_id(id: str, updated_data:LegalHistory):
         raise HTTPException(status_code=404, detail="Legal History details not found")
     
     return {"message": "Legal History details updated successfully"}
+
 
 

@@ -23,11 +23,13 @@ legal_histroy_collection              = database['legalHistory']
 referral_collection                   = database['referral']
 discharge_slip_collection             = database['dischargeSlip']
 
-# high_risk_declaration_collection
-personal_family_background_collection         = database['personalFamilyBackground']
-marital_educational_social_history_collection = database['maritalEducationalSocialHistory']
-health_psychological_profile_collection       = database['healthPsychologicalProfile']
 
+# high_risk_declaration_collection
+high_risk_declaration_form_collection = database['highRiskDeclarationForm']
+family_history_form_collection = database['familyHistoryForm']
+childhood_and_adolescent_collection = database['childhoodAndAdolescent']
+patient_history_collection = database['patientHistory']
+family_health_status_collection = database['familyHealthStatus']
 
 
 

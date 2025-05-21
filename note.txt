@@ -2,16 +2,18 @@ venv/Scripts/activate
 
 
 -----run server
-uvicorn main:app --reload --port 8001
+uvicorn main:app --reload --port 8000
 
 
 -----run ngrok
-ngrok http --domain=grouper-internal-wrongly.ngrok-free.app http://localhost:8001
+ngrok http --domain=grouper-internal-wrongly.ngrok-free.app http://localhost:8000
 
 
 
-1. add env file for enviroment variable
-2. refresh token functionality
+1. forget password
+2. send email funcion
+
+
 
 
 

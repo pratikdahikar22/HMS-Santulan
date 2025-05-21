@@ -48,7 +48,7 @@ class ReligiousBeliefs(BaseModel):
     practices: ReligiousPractices
 
 
-class PatientHistory(BaseModel):
+class PatientLegalHistory(BaseModel):
     patient_id: str
     legal_history: LegalHistory
     leisure_time_activities: LeisureTimeActivities

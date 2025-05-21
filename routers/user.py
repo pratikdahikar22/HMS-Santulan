@@ -1,14 +1,16 @@
 from fastapi import APIRouter, Request
-from models.user import User
+from models.user import User, GetUser, FogotPassword
 from db import users_collection
 from fastapi.security import OAuth2PasswordRequestForm
 from typing_extensions import Annotated
 from fastapi import FastAPI, Header, Depends, HTTPException
 from datetime import datetime, timedelta
 from .utile import create_access_token, create_refresh_token, verify_token, pwd_context, SECRET_KEY, ALGORITHM
-from models.user import GetUser
+from bson import ObjectId  # type: ignore
 from typing import List
 import jwt # type: ignore
+from bson.errors import InvalidId # type: ignore
+
 
 router = APIRouter()
 
@@ -92,6 +94,36 @@ def refresh_token(request: Request):
     return {"access_token": new_access_token}
 
 
+@router.post("/forgot-password/")
+async def forgot_password(user_info:FogotPassword, decrypted_data:dict=Depends(verify_token)):
+    print(decrypted_data) 
+    role = decrypted_data.get('role','')
+    user_info = user_info.dict()
+    user_id = user_info.get('userId','')
+    new_password = user_info.get('newPassword','')
+    
+    if role != "Admin":
+        raise HTTPException(status_code=400, detail='Unathorize (Only Admin has permission to this API)')
+    
+    # user = users_collection.find({'_id': ObjectId(user_id)})
+
+    try:
+        obj_id = ObjectId(user_id)
+    except InvalidId:
+        raise HTTPException(status_code=400, detail='Invalid user Id...!')
+
+    result = users_collection.update_one(
+        {'_id': obj_id},
+        {'$set': {'password': hash_password(new_password)}}
+    )
+    
+    if result.matched_count == 0:
+        raise HTTPException(status_code=400, detail='User not found')
+    
+    return {
+        'message': "User password change successfully..!"
+    }
+
 
 
 @router.post("/user/")
@@ -128,5 +160,6 @@ async def get_all_users(decrypted_data:dict=Depends(verify_token)):
     results = users_collection.find().sort('firstName')
     results = list(map(update_user_info, results))
     return results
+
 
 
