@@ -22,16 +22,16 @@ app.add_middleware(
 # Include routers
 app.include_router(user.router, tags=["Users"])
 app.include_router(patient.router, tags=["Patient"])
-app.include_router(declaration_indemnity.router, tags=["Declaration Indemnity Form"])
 app.include_router(medical_case_sheet1.router, tags=["Medical Case Sheet1"])
 app.include_router(medical_case_sheet2.router, tags=["Medical Case Sheet2"])
 app.include_router(periodic_checkup.router, tags=["Periodic Checkup Chart"])
-app.include_router(declaration_consent_form.router, tags=["Declaration Consent Form"])
+app.include_router(declaration_indemnity.router, tags=["Declaration Cum Indemnity Form"])
+app.include_router(declaration_consent_form.router, tags=["Consent And Declaration Form"])
+app.include_router(high_risk_declaration.router)
 app.include_router(sexual_history.router, tags=["Sexual History"])
 app.include_router(legal_history.router, tags=["Legal History"])
 app.include_router(referral.router, tags=["Referral"])
 app.include_router(discharge_slip.router, tags=["Discharge Slip"])
-app.include_router(high_risk_declaration.router)
 
 
 
