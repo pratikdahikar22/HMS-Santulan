@@ -7,12 +7,12 @@ uvicorn main:app --reload --port 8000
 
 -----run ngrok
 ngrok http --domain=grouper-internal-wrongly.ngrok-free.app http://localhost:8000
+ngrok http --domain=exact-evenly-snail.ngrok-free.app http://localhost:8000
 
 
-
-1. forget password
-2. send email funcion
-
+ngrok account:
+email: jemix21664@nomrista.com
+pwd: Pass@12345
 
 
 
