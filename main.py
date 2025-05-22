@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from routers import user, patient, declaration_indemnity, medical_case_sheet1, medical_case_sheet2, periodic_checkup, declaration_consent_form, sexual_history, legal_history, referral, discharge_slip, high_risk_declaration
+from routers import user, patient, declaration_indemnity, medical_case_sheet1, medical_case_sheet2, periodic_checkup, declaration_consent_form, sexual_history, legal_history, referral, discharge_slip, high_risk_declaration, activity_sheet
 
 app = FastAPI(
     title="Hospital Management(Santulan) API",
@@ -32,6 +32,7 @@ app.include_router(sexual_history.router, tags=["Sexual History"])
 app.include_router(legal_history.router, tags=["Legal History"])
 app.include_router(referral.router, tags=["Referral"])
 app.include_router(discharge_slip.router, tags=["Discharge Slip"])
+app.include_router(activity_sheet.router, tags=["Activity Sheet"])
 
 
 

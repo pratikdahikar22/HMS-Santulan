@@ -22,7 +22,7 @@ sexual_histroy_collection             = database['sexualHistory']
 legal_histroy_collection              = database['legalHistory']
 referral_collection                   = database['referral']
 discharge_slip_collection             = database['dischargeSlip']
-
+activity_sheet_collection             = database['activitySheet']
 
 # high_risk_declaration_collection
 high_risk_declaration_form_collection = database['highRiskDeclarationForm']

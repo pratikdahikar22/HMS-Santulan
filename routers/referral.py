@@ -8,7 +8,6 @@ from db import referral_collection
 
 from fastapi import APIRouter, Depends
 from .utile import verify_token
-from .utile import verify_token
 
 
 
