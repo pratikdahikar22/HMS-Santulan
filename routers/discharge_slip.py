@@ -5,8 +5,12 @@ from bson import ObjectId     # type: ignore
 from bson.errors import InvalidId # type: ignore
 from fastapi import HTTPException
 from db import discharge_slip_collection
+from .utile import verify_token
 
-router = APIRouter()
+
+router = APIRouter(
+    # dependencies=[Depends(verify_token)]
+)
 
 
 

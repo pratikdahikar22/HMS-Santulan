@@ -5,10 +5,14 @@ from bson import ObjectId     # type: ignore
 from bson.errors import InvalidId # type: ignore
 from fastapi import HTTPException
 from db import high_risk_declaration_form_collection, family_history_form_collection, childhood_and_adolescent_collection, patient_history_collection, family_health_status_collection
+from .utile import verify_token
 
 
 
-router = APIRouter()
+
+router = APIRouter(
+    # dependencies=[Depends(verify_token)]
+)
 
 
 

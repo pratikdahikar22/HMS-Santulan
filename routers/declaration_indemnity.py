@@ -5,10 +5,12 @@ from bson import ObjectId     # type: ignore
 from bson.errors import InvalidId # type: ignore
 from fastapi import HTTPException
 from db import declaration_indemnity_form_collection
+from .utile import verify_token
 
-router = APIRouter()
 
-# declaration_indemnity_form_collection = database['declarationIndemnityForm']
+router = APIRouter(
+    # dependencies=[Depends(verify_token)]
+)
 
 
 #-------------- Declaration cum indemnity form API -----------
