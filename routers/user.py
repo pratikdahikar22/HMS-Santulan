@@ -219,7 +219,7 @@ async def invite_user(user_data: User, decrypted_data:dict=Depends(verify_token)
     # if resp:
     #     data['password'] = pwd_without_hash
     #     email_resp = send_invite_email(data)
-    #     print('email resp: ', email_resp)git add 
+    #     print('email resp: ', email_resp)
     
     return {
         'message': 'user created successfully',  
@@ -228,6 +228,11 @@ async def invite_user(user_data: User, decrypted_data:dict=Depends(verify_token)
 
 @router.get("/user/", response_model=List[GetUser])
 async def get_all_users(decrypted_data:dict=Depends(verify_token)):
+    print(decrypted_data)
+
+    if decrypted_data['role'] != 'Admin':
+        raise HTTPException(status_code=401, detail='Unauthorized')
+    
     results = users_collection.find().sort('firstName')
     results = list(map(update_user_info, results))
     return results
