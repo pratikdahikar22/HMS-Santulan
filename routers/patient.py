@@ -1,4 +1,4 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, Depends
 from models.patient import  Patient
 from typing import Optional, List
 from bson import ObjectId     # type: ignore
@@ -11,7 +11,7 @@ from .utile import verify_token
 
 
 router = APIRouter(
-    # dependencies=[Depends(verify_token)]
+    dependencies=[Depends(verify_token)]
 )
 
 
