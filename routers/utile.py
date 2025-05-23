@@ -19,15 +19,9 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 ALGORITHM  = os.getenv('ALGORITHM')
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="login")
-pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+pwd_context   = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 
-# def create_access_token(data: dict, expires_delta: timedelta=None):
-#     to_encode = data.copy()
-#     expire = datetime.now(timezone.utc) + (expires_delta or timedelta(minutes=15))
-#     to_encode.update({"exp": expire})  # Add expiry to payload
-#     encoded_jwt = jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
-#     return encoded_jwt
 
 def create_access_token(data: dict):
     to_encode = data.copy()
@@ -43,8 +37,6 @@ def create_refresh_token(data: dict):
     encoded_jwt = jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
     return encoded_jwt
 
-
-
 def verify_token(token: Annotated[str, Depends(oauth2_scheme)]):
     try:
         payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
@@ -57,4 +49,9 @@ def verify_token(token: Annotated[str, Depends(oauth2_scheme)]):
         raise HTTPException(status_code=401, detail="Token has expired")
     except exceptions.InvalidTokenError:
         raise HTTPException(status_code=401, detail="Invalid token")
+
+
+
+# sent email 
+
 

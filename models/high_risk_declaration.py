@@ -100,10 +100,10 @@ class Suspicion(BaseModel):
     while_abstinence: Optional[bool] = None
     
 class ViolenceDetails(BaseModel):
-    # is_patient_suspicious_of_wife: Suspicion
-    is_patient_suspicious_of_wife: Optional[bool]
-    under_influence: Optional[bool]
-    while_abstinence: Optional[bool]
+    is_patient_suspicious_of_wife: Suspicion
+    # is_patient_suspicious_of_wife: Optional[bool]
+    # under_influence: Optional[bool]
+    # while_abstinence: Optional[bool]
     family_violence: Optional[bool]
     family_violence_details: Optional[str]
     physical_violence_towards_family: Optional[bool]
