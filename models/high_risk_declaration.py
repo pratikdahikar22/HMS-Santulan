@@ -95,7 +95,12 @@ class MaritalHistory(BaseModel):
     separated_due_to_addiction: Optional[bool]
     longest_separation_period: Optional[str]
     
+class Suspicion(BaseModel):
+    under_influence: Optional[bool] = None
+    while_abstinence: Optional[bool] = None
+    
 class ViolenceDetails(BaseModel):
+    # is_patient_suspicious_of_wife: Suspicion
     is_patient_suspicious_of_wife: Optional[bool]
     under_influence: Optional[bool]
     while_abstinence: Optional[bool]
