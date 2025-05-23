@@ -1,13 +1,19 @@
 import os 
-from fastapi import HTTPException
+from fastapi import HTTPException, Depends
 import jwt # type: ignore
-from datetime import datetime, timedelta, timezone
 from jwt import exceptions # type: ignore
+from datetime import datetime, timedelta, timezone
 # import time
 from fastapi.security import OAuth2PasswordBearer
-from fastapi import Depends
+# from fastapi import Depends
 from typing_extensions import Annotated
 from passlib.context import CryptContext # type: ignore
+
+# email import
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+
 from dotenv import load_dotenv
 
 
@@ -53,5 +59,35 @@ def verify_token(token: Annotated[str, Depends(oauth2_scheme)]):
 
 
 # sent email 
+def send_email(receiver_email, subject, html_content):
+    sender_email = os.getenv('SENDER_EMAIL')
+    password = os.getenv('EMAIL_PASSWORD')  
+
+    # Create MIME message
+    msg = MIMEMultipart("alternative")
+    msg["From"] = sender_email
+    msg["To"] = receiver_email
+    msg["Subject"] = subject
+
+    # Attach the HTML content
+    html_part = MIMEText(html_content, "html")
+    msg.attach(html_part)
+
+    # Send the email
+    try:
+        with smtplib.SMTP("smtp.gmail.com", 587) as server:
+            server.starttls()
+            server.login(sender_email, password)
+            server.sendmail(sender_email, receiver_email, msg.as_string())
+        return {
+        'statusCode': 200, 
+        'message': "Email sent successfully!"
+        }
+    except Exception as e:
+        print("Failed to send_email:", e)
+        return {
+        'statusCode': 400, 
+        'message': "Failed to send email!"
+        }
 
 

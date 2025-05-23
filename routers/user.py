@@ -5,7 +5,7 @@ from fastapi.security import OAuth2PasswordRequestForm
 from typing_extensions import Annotated
 from fastapi import FastAPI, Header, Depends, HTTPException
 from datetime import datetime, timedelta
-from .utile import create_access_token, create_refresh_token, verify_token, pwd_context, SECRET_KEY, ALGORITHM
+from .utile import create_access_token, create_refresh_token, verify_token, pwd_context, SECRET_KEY, ALGORITHM, send_email
 from bson import ObjectId  # type: ignore
 from typing import List
 import jwt # type: ignore
@@ -26,6 +26,70 @@ def update_user_info(res):
     del res["_id"]
     # del res["password"]
     return res
+
+def send_invite_email(user_info:dict):
+    try:
+        user_full_name = f"{user_info.get('firstName','')} {user_info.get('lastName','')}"
+        username = user_info.get('username','')
+        temporary_password = user_info.get('password','')
+        
+        login_url = "#"
+        organization_name = "Santulan" 
+        year = "2025"
+        
+        html_content = f"""
+            <!DOCTYPE html>
+            <html>
+            <head>
+            <meta charset="UTF-8">
+            <title>Organization Invitation</title>
+            </head>
+            <body style="font-family: Arial, sans-serif; background-color: #f6f9fc; margin: 0; padding: 0;">
+            <div style="max-width: 600px; background-color: #ffffff; margin: 40px auto; padding: 30px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+                <h2 style="color: #2c3e50;">You're Invited to Join Our Organization</h2>
+
+                <p style="color: #555; line-height: 1.6;">Hello <strong>{user_full_name}</strong>,</p>
+
+                <p style="color: #555; line-height: 1.6;">
+                You've been invited to join <strong>{organization_name}</strong>.
+                Below are your login credentials. Please log in and change your password immediately.
+                </p>
+
+                <div style="background-color: #f1f1f1; padding: 15px; border-radius: 5px; margin-top: 20px;">
+                <p style="margin: 0 0 10px 0;">
+                    <strong style="display: inline-block; width: 100px;">Username:</strong> {username}
+                </p>
+                <p style="margin: 0;">
+                    <strong style="display: inline-block; width: 100px;">Password:</strong> {temporary_password}
+                </p>
+                </div>
+
+                <a href="{login_url}" style="display: inline-block; margin-top: 30px; padding: 12px 20px; background-color: #007BFF; color: white; text-decoration: none; border-radius: 5px;">Log In Now</a>
+
+                <p style="color: #555; line-height: 1.6; margin-top: 20px;">If you did not expect this invitation, you can safely ignore this email.</p>
+
+                <div style="text-align: center; font-size: 12px; color: #aaa; margin-top: 40px;">
+                &copy; {year} {organization_name}. All rights reserved.
+                </div>
+            </div>
+            </body>
+            </html>
+        """
+        
+        
+        receiver_email = user_info.get('email','')
+        subject = "Welcome to the Organization(Santulan)"
+        
+        return send_email(receiver_email, subject,html_content)
+    except Exception as e:
+        print("send_invite_email error: ", str(e))
+        return  {
+            'statusCode': 400,
+            'message': 'someting went wrong using sent email!'
+        }
+    
+    
+
 
 @router.get("/")
 def home(decrypted_data:dict=Depends(verify_token)):
@@ -127,7 +191,7 @@ async def forgot_password(user_info:FogotPassword, decrypted_data:dict=Depends(v
 
 
 @router.post("/user/")
-async def create_user(user_data: User, decrypted_data:dict=Depends(verify_token)):
+async def invite_user(user_data: User, decrypted_data:dict=Depends(verify_token)):
 
     if decrypted_data.get('role','') != 'Admin': 
         raise HTTPException(status_code=401, detail='Only Admin can create user')
@@ -136,6 +200,8 @@ async def create_user(user_data: User, decrypted_data:dict=Depends(verify_token)
     
     username = data.get('username')
     password = data.get('password')
+    pwd_without_hash = password
+    
     if username=='' or password=='': raise  HTTPException(status_code=400, detail='username and password required ..!')
     
     # Check user already exist
@@ -148,11 +214,16 @@ async def create_user(user_data: User, decrypted_data:dict=Depends(verify_token)
     data['created_at'] = datetime.now()
     data['updated_at'] = datetime.now()
     
-    res = users_collection.insert_one(data)
-
+    resp = users_collection.insert_one(data)
+    
+    # if resp:
+    #     data['password'] = pwd_without_hash
+    #     email_resp = send_invite_email(data)
+    #     print('email resp: ', email_resp)git add 
+    
     return {
         'message': 'user created successfully',  
-        'user_id': str(res.inserted_id)
+        'user_id': str(resp.inserted_id)
     }
 
 @router.get("/user/", response_model=List[GetUser])
